@@ -1,6 +1,11 @@
 import { Meta } from '@storybook/react'
 import MoneyInput from './MoneyInput'
 
+interface InputArgs {
+  label: string
+  locale: string
+  disabled: boolean
+}
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components/MoneyInput',
@@ -16,4 +21,14 @@ export default {
 } satisfies Meta<typeof MoneyInput>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default = {}
+const inputArgs = (args: InputArgs) => <MoneyInput {...args} />
+
+type StoryWithArgs = ((args: InputArgs) => JSX.Element) & { args?: InputArgs }
+
+export const Default: StoryWithArgs = inputArgs.bind({})
+
+Default.args = {
+  label: 'Currency',
+  locale: 'de',
+  disabled: false,
+}
