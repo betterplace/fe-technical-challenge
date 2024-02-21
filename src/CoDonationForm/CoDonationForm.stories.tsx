@@ -1,10 +1,10 @@
 import { Meta } from '@storybook/react'
-import MoneyInput from './MoneyInput'
+import CoDonationForm from './CoDonationForm'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/MoneyInput',
-  component: MoneyInput,
+  title: 'Components/Co-Donation Form',
+  component: CoDonationForm,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -13,7 +13,7 @@ export default {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof MoneyInput>
+} satisfies Meta<typeof CoDonationForm>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = {}
